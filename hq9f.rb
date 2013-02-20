@@ -67,10 +67,7 @@ class TestHQ9F < MiniTest::Unit::TestCase
   def test_h_string
     out, err = capture_io do
       h("adf")
+    end
+    assert_match /Hello .*!/, out
   end
-  assert_match /Hello .*!/, out
 end
-end
-
-
-
