@@ -53,6 +53,15 @@ end
 
 # TODO: maybe wrap this up as a module providing these methods.
 
+
+
 require 'minitest/autorun'
+
 class TestHQ9F < MiniTest::Unit::TestCase
+  def test_h
+    assert_output "Hello world!\n" do
+      h
+    end
+  end
 end
+
