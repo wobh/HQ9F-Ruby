@@ -4,11 +4,11 @@ end
 
 def ninty_nine (bottles=99)
   bottle_word = lambda do
-    if bottles == 1 
+    if bottles == 1
       "1 bottle"
     elsif bottles == 0
       "no more bottles"
-    else 
+    else
       "#{bottles} bottles"
     end
   end
@@ -16,12 +16,12 @@ def ninty_nine (bottles=99)
   bottle_clause = lambda { "#{bottle_word.call} of beer.\n" }
   take_clause = "Take one down pass it around, "
 
-  sing_verse = lambda do 
+  sing_verse = lambda do
     puts wall_clause.call + ", " + bottle_clause.call
     bottles -= 1
     puts take_clause + wall_clause.call + ".\n\n"
   end
-  
+
   bottles.times do
     sing_verse.call
   end
@@ -30,7 +30,7 @@ end
 def f (min, max, subs)
   factorzz = lambda do |num|
     str = ""
-    subs.each_pair do |key, value|    
+    subs.each_pair do |key, value|
       if num % key == 0
         str += value
       end
@@ -52,3 +52,7 @@ def q ()
 end
 
 # TODO: maybe wrap this up as a module providing these methods.
+
+require 'minitest/autorun'
+class TestHQ9F < MiniTest::Unit::TestCase
+end
